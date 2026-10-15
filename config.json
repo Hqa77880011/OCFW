@@ -1,0 +1,1 @@
+{"seed":13,"nodes":6,"size":64,"horizon":12,"render_horizon":1,"perception_epochs":20,"epochs":50,"batch_size":32,"learning_rate":0.001,"identity_penalty":2,"relation_weight":0.5,"progress_bins":10,"ewma":0.8,"target_horizon":20,"calibration_steps":1000,"normal_penalty":0.1,"persistence":3,"fps":20,"variant":"full"}
