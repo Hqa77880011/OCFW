@@ -14,7 +14,7 @@ Inspection environment: Python 3.13.5, NumPy 2.1.3 and SciPy 1.15.3. Verificatio
 
 ## Data and preprocessing
 
-Export [RLBench](https://github.com/stepjam/RLBench) episodes as NPZ with `rgb: uint8 (T,H,W,3)`, `command: (T,U)` and annotation `masks: (T,H,W)`. Background is 0; object identities are 1–6. The first slots are gripper, manipulated object and target. A CSV manifest contains `episode,split,task,failure,terminal,cause`; terminal is a frame index and cause is a zero-based object ID. Paths are relative to the manifest. Predictor training requires successful episodes only. Final-test masks/cause labels are read by evaluation, not the RGB monitor.
+Export [RLBench](https://github.com/stepjam/RLBench) episodes as NPZ with `rgb: uint8 (T,H,W,3)`, `command: (T,U)` and annotation `masks: (T,H,W)`. Background is 0; object identities are 1–6. The first slots are gripper, manipulated object and target. A CSV manifest contains `episode,split,task,failure,terminal,cause`; terminal is a frame index and cause is a zero-based object ID. Paths are relative to the manifest. Use `train`, `val` and `test` roles. Predictor training requires successful episodes only; validation must include successful episodes for phase calibration. Final-test masks/cause labels are read by evaluation, not the RGB monitor.
 
 ```bash
 python -m ocfr prepare --input data/episodes.csv --config config.json --output runs/full
